@@ -2,76 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Bronny Bird</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="wrap">
-    <header class="top">
-      <div class="brand">
+
+    <!-- HOME / MENU -->
+    <div id="menu" class="panel">
+      <div class="titleRow">
         <div class="logo">🏀</div>
         <div>
-          <h1>Bronny Bird</h1>
-          <p class="tag">Jump, grab basketballs, and dunk at hoops.</p>
+          <h1 class="title">Bronny Bird</h1>
+          <div class="subtitle">Flap. Hoop. BOOM.</div>
         </div>
       </div>
 
-      <div class="stats">
-        <div class="pill">Score: <span id="score">0</span></div>
-        <div class="pill">High: <span id="hiscore">0</span></div>
-        <div class="pill">Ball: <span id="carry">No</span></div>
+      <div class="instructions">
+        <h2>How to play</h2>
+        <ul>
+          <li>Press <b>Space</b> to jump between pipes.</li>
+          <li>Earn <b>+1</b> point for every pipe you pass.</li>
+          <li>Pick up a <b>basketball</b> (you can carry only <b>one</b>).</li>
+          <li>Dunk it at a <b>random hoop</b> for <b>+3</b> points (💥 explosion!).</li>
+          <li>Hit a pipe = <b>game over</b>.</li>
+        </ul>
       </div>
-    </header>
 
-    <main class="stage">
-      <canvas id="game" width="720" height="420" aria-label="Bronny Bird game canvas"></canvas>
+      <button id="playBtn" class="playBtn">▶ PLAY</button>
 
-      <!-- HOME / MENU -->
-      <section id="menu" class="overlay">
-        <div class="card">
-          <h2>Bronny Bird</h2>
-          <p class="muted">
-            High score: <strong><span id="menuHigh">0</span></strong>
-          </p>
+      <div class="highScoreBox">
+        High score: <span id="hiScoreText">0</span>
+      </div>
 
-          <button id="playBtn" class="btn">▶ Play</button>
+      <div class="tinyNote">Tip: click canvas to focus, then Space to flap.</div>
+    </div>
 
-          <div class="instructions">
-            <h3>How to play</h3>
-            <ul>
-              <li>Press <strong>Spacebar</strong> to jump (click/tap also works).</li>
-              <li>Fly between pipes: <strong>+1</strong> point for each pipe passed.</li>
-              <li>Pick up a <strong>basketball</strong> (you can carry only one).</li>
-              <li>When a hoop appears, fly through it while carrying a ball to <strong>dunk</strong> for <strong>+3</strong> points.</li>
-              <li>If you hit a pipe, the ground, or the ceiling: <strong>game over</strong>.</li>
-            </ul>
-          </div>
+    <!-- GAME -->
+    <canvas id="game" width="800" height="450" aria-label="Bronny Bird game canvas"></canvas>
 
-          <p class="muted small">
-            Tip: The hoop “scores” when your player passes through its ring while carrying a ball.
-          </p>
-        </div>
-      </section>
+    <!-- GAME OVER OVERLAY -->
+    <div id="gameOver" class="overlay hidden">
+      <div class="panel">
+        <h2>Game Over</h2>
+        <div class="scoreLine">Score: <span id="finalScore">0</span></div>
+        <div class="scoreLine">High score: <span id="hiScoreText2">0</span></div>
+        <button id="restartBtn" class="playBtn">↻ PLAY AGAIN</button>
+        <button id="menuBtn" class="secondaryBtn">↩ MENU</button>
+      </div>
+    </div>
 
-      <!-- GAME OVER -->
-      <section id="gameover" class="overlay hidden">
-        <div class="card">
-          <h2>Game Over</h2>
-          <p class="muted">Score: <strong><span id="finalScore">0</span></strong></p>
-          <p class="muted">High score: <strong><span id="finalHigh">0</span></strong></p>
-          <div class="row">
-            <button id="retryBtn" class="btn">↻ Play Again</button>
-            <button id="menuBtn" class="btn ghost">☰ Menu</button>
-          </div>
-          <p class="muted small">Press <strong>Space</strong> to retry.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer muted small">
-      Made for class: HTML Canvas + JavaScript.
-    </footer>
   </div>
 
   <script src="game.js"></script>
