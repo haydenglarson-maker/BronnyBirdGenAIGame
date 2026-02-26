@@ -8,14 +8,12 @@
 </head>
 <body>
   <div class="wrap">
-
-    <!-- HOME / MENU -->
     <div id="menu" class="panel">
       <div class="titleRow">
         <div class="logo">🏀</div>
         <div>
           <h1 class="title">Bronny Bird</h1>
-          <div class="subtitle">Flap. Hoop. BOOM.</div>
+          <div class="subtitle">Flap. Grab. Dunk. 💥</div>
         </div>
       </div>
 
@@ -24,7 +22,7 @@
         <ul>
           <li>Press <b>Space</b> to jump between pipes.</li>
           <li>Earn <b>+1</b> point for every pipe you pass.</li>
-          <li>Pick up a <b>basketball</b> (you can carry only <b>one</b>).</li>
+          <li>Pick up a <b>basketball</b> (carry only <b>one</b>).</li>
           <li>Dunk it at a <b>random hoop</b> for <b>+3</b> points (💥 explosion!).</li>
           <li>Hit a pipe = <b>game over</b>.</li>
         </ul>
@@ -36,13 +34,11 @@
         High score: <span id="hiScoreText">0</span>
       </div>
 
-      <div class="tinyNote">Tip: click canvas to focus, then Space to flap.</div>
+      <div class="tinyNote">Tip: click the canvas once, then Space to flap.</div>
     </div>
 
-    <!-- GAME -->
     <canvas id="game" width="800" height="450" aria-label="Bronny Bird game canvas"></canvas>
 
-    <!-- GAME OVER OVERLAY -->
     <div id="gameOver" class="overlay hidden">
       <div class="panel">
         <h2>Game Over</h2>
@@ -52,7 +48,6 @@
         <button id="menuBtn" class="secondaryBtn">↩ MENU</button>
       </div>
     </div>
-
   </div>
 
   <script src="game.js"></script>
