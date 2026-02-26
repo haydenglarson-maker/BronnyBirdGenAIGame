@@ -1,1 +1,24 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Square Dodge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Square Dodge</h1>
+    <p class="sub">Move with ← → (or A/D). Don’t get hit. Press Space to restart.</p>
+
+    <canvas id="game" width="640" height="360" aria-label="Game canvas"></canvas>
+
+    <div class="hud">
+      <div id="status">Click the canvas to start.</div>
+      <div>High score: <span id="hiscore">0</span></div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
